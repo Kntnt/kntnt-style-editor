@@ -53,28 +53,4 @@ trait File_Save {
 
 	}
 
-	// Returns an array of information about the upload directory. If `$subdir`
-	// is given, it's used as the subdirectory's path relative the upload
-	// directory (any leading slash is removed), otherwise the plugin's name
-	// space is used as name of the subdirectory.
-	public static final function upload_dir( $subdir = null ) {
-
-		$subdir = trim( $subdir ?: Plugin::ns(), '/' );
-
-		$upload_dir_filter = function ( $upload_dir ) use ( $subdir ) {
-			$upload_dir['path'] = "{$upload_dir['basedir']}/$subdir";
-			$upload_dir['url'] = "{$upload_dir['baseurl']}/$subdir";
-			$upload_dir['subdir'] = "$subdir";
-			return $upload_dir;
-		};
-		add_filter( 'upload_dir', $upload_dir_filter );
-
-		$upload_dir = wp_upload_dir();
-
-		remove_filter( 'upload_dir', $upload_dir_filter );
-
-		return $upload_dir;
-
-	}
-
 }
