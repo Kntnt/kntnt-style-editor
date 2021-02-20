@@ -20,7 +20,7 @@
 namespace Kntnt\Style_Editor;
 
 // Uncomment following line to debug this plugin.
-define( 'KNTNT_STYLE_EDITOR_DEBUG', true );
+// define( 'KNTNT_STYLE_EDITOR_DEBUG', true );
 
 require 'autoload.php';
 

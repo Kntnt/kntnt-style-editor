@@ -19,8 +19,8 @@ final class Plugin extends Abstract_Plugin {
 				],
 			],
 			'admin' => [
-				'init' => [
-					'Settings',
+				'admin_menu' => [
+					'Editor_Page',
 				],
 				'admin_enqueue_scripts' => [
 					'Load_Editor',

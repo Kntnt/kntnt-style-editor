@@ -4,7 +4,7 @@ WordPress plugin that creates a CSS-file that can be edited through the administ
 
 ## Description
 
-This plugin provides a code editor for CSS. The CSS is saved to a file, which is globally enqueued to be shown at the frontend.
+This lightweight plugin uses WordPress built-in code editor to allow you edit CSS. The CSS is saved to a file, which is globally enqueued to be shown at the frontend.
 
 ## Installation
 
@@ -16,7 +16,7 @@ You can also install it with [*GitHub Updater*](https://github.com/afragen/githu
 
 ### Where is the editor?
 
-Look for `Kntnt Style Editor` in the Settings menu.
+Look for *Kntnt Style Editor* in the *Appearance* menu.
 
 ### How does this plugin work?
 
@@ -55,17 +55,14 @@ If you are unfamiliar with Git, please date it as a new issue on the plugin's [i
 
 If you are familiar with Git, please make a pull request.
 
-## TODOs
-
-1. ~~Create this plugin~~
-1. Move the editor page from Settings to Tools in the menu.
-1. Improve the look of the editor page
-
 ## Changelog
 
 ### 1.0.2
 
-* Editor fills the page.  
+* Improved how the editor is shown. 
+* Minor updates to the README file.
+* Added install.php to make sure the CSS isn't auto-loaded from the wp_option table.
+* Added uninstall.php to delete this plugin option and created file.
 
 ### 1.0.1
 
@@ -75,4 +72,4 @@ If you are familiar with Git, please make a pull request.
 ### 1.0.0
 
 * The initial release.
-* Fully functional plugin.
+* A fully functional plugin.

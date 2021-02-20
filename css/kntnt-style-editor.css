@@ -1,4 +1,18 @@
-.CodeMirror {
-    height: auto !important;
-    width: auto !important;
+.appearance_page_kntnt-style-editor #wpcontent {
+    padding: 20px 40px;
 }
+
+.appearance_page_kntnt-style-editor .notice {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.appearance_page_kntnt-style-editor .CodeMirror {
+    border: 1px solid black;
+    height: calc(100vh - 260px) !important;
+    width: 100% !important;
+    min-height: 300px;
+    min-width: 300px;
+}
+
+

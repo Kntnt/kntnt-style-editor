@@ -86,7 +86,11 @@ abstract class Abstract_Plugin {
 	}
 
 	public static final function is_using( $trait ) {
-		return ( $traits = class_uses( static::class ) ) && isset( $traits[ __NAMESPACE__ . "\\$trait" ] );
+		static $traits = null;
+		if ( null === $traits ) {
+			$traits = class_uses( static::class );
+		}
+		return isset( $traits[ __NAMESPACE__ . "\\$trait" ] );
 	}
 
 	// Name space of plugin.
