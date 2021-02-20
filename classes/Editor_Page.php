@@ -83,6 +83,9 @@ class Editor_Page {
 		// Logging
 		Plugin::is_using( 'Logger' ) && Plugin::debug( 'Options saved: %s', $opt );
 
+		// Actions after saving.
+		$this->actions_after_saving( $opt );
+
 	}
 
 	private function notify_success() {
@@ -92,6 +95,18 @@ class Editor_Page {
 
 	private function notify_admin( $message, $type ) {
 		echo "<div class=\"notice notice-$type is-dismissible\"><p>$message</p></div>";
+	}
+
+	private function actions_after_saving( $opt ) {
+		if ( $opt['css'] ) {
+			$info = Plugin::save_to_file( $opt['css'], 'css' );
+			Plugin::set_option( 'css_file_info', $info );
+		}
+		else if ( $css_file_info = Plugin::option( 'css_file_info' ) ) {
+			@unlink( $css_file_info['file'] );
+			Plugin::delete_option( 'css_file_info' );
+			Plugin::debug( 'Deleted "%s".', $css_file_info['file'] );
+		}
 	}
 
 }
