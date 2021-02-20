@@ -13,8 +13,6 @@ class Settings extends Abstract_Settings {
 		$fields['css'] = [
 			'type' => 'text area',
 			'label' => __( 'Style', 'kntnt-style-editor' ),
-			'rows' => 25,
-			'cols' => 80,
 		];
 
 		$fields['submit'] = [

@@ -63,6 +63,10 @@ If you are familiar with Git, please make a pull request.
 
 ## Changelog
 
+### 1.0.2
+
+* Editor fills the page.  
+
 ### 1.0.1
 
 * Minor refactoring of code.

@@ -8,7 +8,7 @@
  * Plugin URI:        https://github.com/Kntnt/kntnt-style-editor
  * GitHub Plugin URI: https://github.com/Kntnt/kntnt-style-editor
  * Description:       Creates a CSS-file that can be edited through the administration user interface.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Thomas Barregren
  * Author URI:        https://www.kntnt.com/
  * License:           GPL-3.0+
@@ -20,7 +20,7 @@
 namespace Kntnt\Style_Editor;
 
 // Uncomment following line to debug this plugin.
-// define( 'KNTNT_STYLE_EDITOR_DEBUG', true );
+define( 'KNTNT_STYLE_EDITOR_DEBUG', true );
 
 require 'autoload.php';
 
