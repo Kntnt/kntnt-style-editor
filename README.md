@@ -57,9 +57,13 @@ If you are familiar with Git, please make a pull request.
 
 ## Changelog
 
+### 1.0.4
+
+* Delayed enqueueing of the CSS with priority 9999.
+
 ### 1.0.3
 
-* Fixed regression the bug (style not saved as file).
+* Fixed regression bug (style not saved as file).
 
 ### 1.0.2
 

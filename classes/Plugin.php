@@ -14,7 +14,7 @@ final class Plugin extends Abstract_Plugin {
 	public function classes_to_load() {
 		return [
 			'public' => [
-				'wp_enqueue_scripts' => [
+				'init' => [
 					'Load_CSS',
 				],
 			],
