@@ -59,7 +59,7 @@ If you are familiar with Git, please make a pull request.
 
 ### 1.0.4
 
-* Delayed enqueueing of the CSS with priority 9999.
+* Delayed enqueuing of the CSS with priority 9999.
 
 ### 1.0.3
 
