@@ -6,8 +6,8 @@
 **Tested up to:** 6.8  
 **Requires PHP:** 8.3  
 **Stable tag:** 2.0.0  
-**License:** GPL-3.0-or-later  
-**License URI:** https://www.gnu.org/licenses/gpl-3.0.html
+**License:** GPL-2.0-or-later  
+**License URI:** https://www.gnu.org/licenses/gpl-2.0.html
 
 A WordPress plugin that provides a simple, high-performance way to add custom CSS globally across your site.
 
