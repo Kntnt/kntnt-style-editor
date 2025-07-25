@@ -1,27 +1,34 @@
 <?php
-
 /**
- * Plugin main file.
- *
- * @wordpress-plugin
  * Plugin Name:       Kntnt Style Editor
  * Plugin URI:        https://github.com/Kntnt/kntnt-style-editor
  * GitHub Plugin URI: https://github.com/Kntnt/kntnt-style-editor
- * Description:       Creates a CSS-file that can be edited through the administration user interface.
- * Version:           1.0.4
+ * Description:       Creates and manages a global CSS file editable through the WordPress admin interface.
+ * Version:           2.0.0
  * Author:            Thomas Barregren
  * Author URI:        https://www.kntnt.com/
- * License:           GPL-3.0+
- * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
- * Requires PHP:      7.1
+ * License:           GPL-2.0-or-later
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * Requires PHP:      8.3
+ * Requires at least: 6.8
+ * Text Domain:       kntnt-style-editor
+ * Domain Path:       /languages
  */
 
+declare( strict_types = 1 );
 
 namespace Kntnt\Style_Editor;
 
-// Uncomment following line to debug this plugin.
-// define( 'KNTNT_STYLE_EDITOR_DEBUG', true );
+// Prevent direct file access.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 
-require 'autoload.php';
+// Register the autoloader for the plugin's classes.
+require_once __DIR__ . '/autoloader.php';
 
-defined( 'WPINC' ) && new Plugin;
+// Set the plugin file path for the Plugin class to use.
+Plugin::set_plugin_file( __FILE__ );
+
+// Initialize the plugin.
+Plugin::get_instance();

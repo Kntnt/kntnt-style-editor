@@ -1,0 +1,8 @@
+/* Kntnt Style Editor Admin Styles */
+
+.kntnt-style-editor-wrap .CodeMirror {
+  border: 1px solid #ccd0d4;
+  height: calc(100vh - 280px); /* Adjust height based on viewport, accounting for admin UI */
+  min-height: 400px;
+  width: 100%;
+}
