@@ -35,7 +35,7 @@ final class Updater {
 
 		// Get data from the plugin's main file header.
 		$plugin_data = Plugin::get_plugin_data();
-		$github_uri = $plugin_data['GitHub Plugin URI'] ?? '';
+		$github_uri = $plugin_data['PluginURI'] ?? '';
 
 		// Extract the repository slug (e.g., "Kntnt/kntnt-style-editor") from the URI.
 		$github_repo = $this->get_github_repo_from_uri( $github_uri );

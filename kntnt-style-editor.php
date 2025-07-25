@@ -2,9 +2,8 @@
 /**
  * Plugin Name:       Kntnt Style Editor
  * Plugin URI:        https://github.com/Kntnt/kntnt-style-editor
- * GitHub Plugin URI: https://github.com/Kntnt/kntnt-style-editor
  * Description:       Creates and manages a global CSS file editable through the WordPress admin interface.
- * Version:           2.1.1
+ * Version:           2.1.2
  * Author:            Thomas Barregren
  * Author URI:        https://www.kntnt.com/
  * License:           GPL-2.0-or-later
