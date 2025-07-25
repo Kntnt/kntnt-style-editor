@@ -22,6 +22,7 @@ This approach offers a significant advantage over the theme customizer's "Additi
 * **Developer Friendly:** Includes WordPress hooks for cache-clearing integrations and CSS processing customization.
 * **Integration Ready:** Implements the `css_class_manager_filtered_class_names` filter, automatically making your custom CSS classes available to plugins like [CSS Class Manager](https://wordpress.org/plugins/css-class-manager/).
 * **Clean and Secure:** Built with modern PHP 8.3, a clean architecture, and follows WordPress security best practices.
+* **Self-Updating:** The plugin automatically checks for new versions on GitHub. When a new release is available, you can update directly from the WordPress admin panel, ensuring you always have the latest features and fixes.
 
 ## Installation
 
@@ -145,7 +146,9 @@ Contributions are welcome! Please feel free to fork the repository and submit a 
 
 ## Changelog
 
-### 2.0.0
+### 2.1.0
+
+* **Feature:** Added a built-in, automatic update mechanism. The plugin now checks for new releases on GitHub and provides update notifications directly in the WordPress admin panel.
 
 ### 2.0.0
 

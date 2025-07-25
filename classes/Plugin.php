@@ -25,6 +25,13 @@ final class Plugin {
 	private static ?Plugin $instance = null;
 
 	/**
+	 * Updater component instance.
+	 *
+	 * @var Updater
+	 */
+	public readonly Updater $updater;
+
+	/**
 	 * Editor component instance.
 	 *
 	 * @var Editor
@@ -75,6 +82,7 @@ final class Plugin {
 	 */
 	private function __construct() {
 		// Initialize plugin components
+		$this->updater = new Updater;
 		$this->editor = new Editor;
 		$this->assets = new Assets;
 		$this->parser = new Class_Manager_Integration;
@@ -137,15 +145,33 @@ final class Plugin {
 	}
 
 	/**
-	 * Gets the plugin version from the plugin header.
+	 * Gets the plugin data from the plugin header.
 	 *
 	 * Reads version information from the main plugin file header. Caches
 	 * the result to avoid repeated file parsing.
 	 *
-	 * @return string Plugin version number.
-	 * @since 2.0.0
+	 * @return array {
+	 *     Plugin data. Values will be empty if not supplied by the plugin.
+	 *
+	 * @type string $Name            Name of the plugin. Should be unique.
+	 * @type string $PluginURI       Plugin URI.
+	 * @type string $Version         Plugin version.
+	 * @type string $Description     Plugin description.
+	 * @type string $Author          Plugin author's name.
+	 * @type string $AuthorURI       Plugin author's website address (if set).
+	 * @type string $TextDomain      Plugin textdomain.
+	 * @type string $DomainPath      Plugin's relative directory path to .mo files.
+	 * @type bool   $Network         Whether the plugin can only be activated network-wide.
+	 * @type string $RequiresWP      Minimum required version of WordPress.
+	 * @type string $RequiresPHP     Minimum required version of PHP.
+	 * @type string $UpdateURI       ID of the plugin for update purposes, should be a URI.
+	 * @type string $RequiresPlugins Comma separated list of dot org plugin slugs.
+	 * @type string $Title           Title of the plugin and link to the plugin's site (if set).
+	 * @type string $AuthorName      Plugin author's name.
+	 *
+	 * @since 2.1.0
 	 */
-	public static function get_version(): string {
+	public static function get_plugin_data(): array {
 
 		// Load plugin data if not already cached
 		if ( self::$plugin_data === null ) {
@@ -162,9 +188,18 @@ final class Plugin {
 
 		}
 
-		// Return version with fallback
-		return self::$plugin_data['Version'] ?? '1.0.0';
+		return self::$plugin_data;
 
+	}
+
+	/**
+	 * Gets the plugin version from the plugin header.
+	 *
+	 * @return string Plugin version number.
+	 * @since 2.0.0
+	 */
+	public static function get_version(): string {
+		return self::get_plugin_data()['Version'] ?? '';
 	}
 
 	/**
@@ -318,6 +353,9 @@ final class Plugin {
 	 * @since 2.0.0
 	 */
 	private function register_hooks(): void {
+
+		// Check for updates from GitHub
+		add_filter( 'pre_set_site_transient_update_plugins', [ $this->updater, 'check_for_updates' ] );
 
 		// Register admin menu page
 		add_action( 'admin_menu', [ $this->editor, 'register_editor_page' ] );
