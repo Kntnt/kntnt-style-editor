@@ -150,8 +150,6 @@ Contributions are welcome! Please feel free to fork the repository and submit a 
 
 * **Feature:** Added link to adminbar.
 
-* **Fix:** Use Plugin URI as GitHub URI.
-
 ### 2.1.2
 
 * **Fix:** Use Plugin URI as GitHub URI.
