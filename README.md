@@ -30,7 +30,7 @@ This approach offers a significant advantage over the theme customizer's "Additi
 
 ## Installation
 
-1. [Download the latest release ZIP file](https://github.com/Kntnt/kntnt-popup/releases/latest/download/kntnt-style-editor.zip).
+1. [Download the latest release ZIP file](https://github.com/Kntnt/kntnt-style-editor/releases/latest/download/kntnt-style-editor.zip).
 2. In your WordPress admin panel, go to **Plugins → Add New**.
 3. Click **Upload Plugin** and select the downloaded ZIP file.
 4. Activate the plugin.
