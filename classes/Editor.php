@@ -285,4 +285,32 @@ final class Editor {
 		}
 	}
 
+	/**
+	 * Adds a link to the style editor in the WordPress admin bar.
+	 *
+	 * Only visible to users with the capability to edit theme options.
+	 *
+	 * @param \WP_Admin_Bar $wp_admin_bar The WP_Admin_Bar instance.
+	 *
+	 * @return void
+	 * @since 2.2.0
+	 */
+	public function add_admin_bar_link( \WP_Admin_Bar $wp_admin_bar ): void {
+
+		// Ensure user has the correct permissions
+		if ( ! current_user_can( Plugin::get_capability() ) ) {
+			return;
+		}
+
+		// Add the admin bar node
+		$wp_admin_bar->add_node( [
+			'id' => Plugin::get_slug(),
+			'title' => __( 'Style Editor', 'kntnt-style-editor' ),
+			'href' => admin_url( 'themes.php?page=' . Plugin::get_slug() ),
+			'meta' => [
+				'class' => Plugin::get_slug() . '-admin-bar',
+			],
+		] );
+	}
+
 }

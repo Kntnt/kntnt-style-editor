@@ -360,6 +360,9 @@ final class Plugin {
 		// Register admin menu page
 		add_action( 'admin_menu', [ $this->editor, 'register_editor_page' ] );
 
+		// Add link to Admin Bar
+		add_action( 'admin_bar_menu', [ $this->editor, 'add_admin_bar_link' ], 999 );
+
 		// Register admin assets
 		add_action( 'admin_enqueue_scripts', [ $this->assets, 'enqueue_admin_assets' ] );
 
