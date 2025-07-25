@@ -152,19 +152,21 @@ Contributions are welcome! Please feel free to fork the repository and submit a 
 
 ### 2.0.0
 
-* **Feature:** Added automatic CSS minification for the static file while preserving original formatting in the editor.
-* **Feature:** Added `kntnt-style-editor-minimize` filter for customizable CSS processing.
-* **Enhancement:** Improved CSS parser to use a specific `@class-manager` tag for exposing classes to the CSS Class Manager plugin, making the integration more robust and explicit.
-* **Enhancement:** Made the built-in CSS minifier publicly accessible via `\Kntnt\Style_Editor\Editor::minifier()`.
-* **Doc:** Updated README to explain the new minification features and filter usage.
+### 2.0.0
+
 * **Major Refactor:** Complete rewrite of the plugin with a modern, object-oriented architecture inspired by `kntnt-popup`.
 * **Enhancement:** Now requires PHP 8.3 and WordPress 6.8.
-* **Enhancement:** Uses modern JavaScript (ES12) and removes jQuery dependency for admin scripts.
-* **Enhancement:** Implements `WP_Filesystem` API for secure file operations.
+* **Feature:** Added automatic CSS minification for the static file while preserving original formatting in the editor.
+* **Feature:** Added `kntnt-style-editor-minimize` filter for customizable CSS processing.
+* **Enhancement:** Made the built-in CSS minifier publicly accessible via `\Kntnt\Style_Editor\Editor::minifier()`.
 * **Feature:** Adds a `do_action('kntnt-style-editor-saved', $css)` hook for cache-clearing and other integrations.
 * **Feature:** Implements the `css_class_manager_filtered_class_names` filter to automatically provide classes to compatible plugins.
+* **Enhancement:** Improved CSS parser to use a specific `@class-manager` tag for exposing classes to the CSS Class Manager plugin, making the integration more robust and explicit.
+* **Enhancement:** Implements `WP_Filesystem` API for secure file operations.
+* **Enhancement:** Uses modern JavaScript (ES12) and removes jQuery dependency for admin scripts.
 * **Improvement:** Cleaner admin UI and improved code structure for better maintainability and testability.
 * **Fix:** CSS file versioning is now based on file modification time for automatic cache busting.
+* **Doc:** Updated README.
 
 ### 1.0.4
 
