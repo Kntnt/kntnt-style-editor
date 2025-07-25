@@ -146,11 +146,11 @@ Contributions are welcome! Please feel free to fork the repository and submit a 
 
 ## Changelog
 
-### 2.0.1
+### 2.1.1
 
 * **Fix:** Bumbped version number of the plugin heading.
 
-### 2.0.0
+### 2.1.0
 
 * **Feature:** Added a built-in, automatic update mechanism. The plugin now checks for new releases on GitHub and provides update notifications directly in the WordPress admin panel.
 
