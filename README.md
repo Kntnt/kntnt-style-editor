@@ -7,7 +7,7 @@
 A WordPress plugin that provides a simple, high-performance way to add custom CSS globally across your site.
 
 > [!NOTE]
-> There is a much more modern and powerful plugin ([Kntnt Global Styles]([url](https://github.com/Kntnt/kntnt-global-styles/tree/main))) that builds on this one. Consider using that instead.
+> There is a much more modern and powerful plugin ([Kntnt Global Styles](https://github.com/Kntnt/kntnt-global-styles/tree/main)) that builds on this one. Consider using that instead.
 > This plugin will not be maintained or further developed.
 
 ## Description
