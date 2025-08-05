@@ -6,6 +6,10 @@
 
 A WordPress plugin that provides a simple, high-performance way to add custom CSS globally across your site.
 
+> [!NOTE]
+> There is a much more modern and powerful plugin ([Kntnt Global Styles]([url](https://github.com/Kntnt/kntnt-global-styles/tree/main))) that builds on this one. Consider using that instead.
+> This plugin will not be maintained or further developed.
+
 ## Description
 
 Kntnt Style Editor is a lightweight and performance-oriented plugin that allows you to add and edit custom CSS through a clean, modern editor in the WordPress admin area. The CSS is saved to a static file, ensuring it is loaded efficiently by browsers and can be cached by performance plugins without impacting server load.
