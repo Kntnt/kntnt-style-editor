@@ -150,6 +150,10 @@ Contributions are welcome! Please feel free to fork the repository and submit a 
 
 ## Changelog
 
+### 2.3.0
+
+* **Fix:** Brand new CSS sanitizer that works with modern CSS (e.g., @property).
+
 ### 2.2.0
 
 * **Feature:** Added link to adminbar.

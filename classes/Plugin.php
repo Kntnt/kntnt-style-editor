@@ -39,6 +39,13 @@ final class Plugin {
 	public readonly Editor $editor;
 
 	/**
+	 * CSS sanitizer instance.
+	 *
+	 * @var Sanitizer
+	 */
+	public readonly Sanitizer $sanitizer;
+
+	/**
 	 * Assets management component instance.
 	 *
 	 * @var Assets
@@ -84,6 +91,7 @@ final class Plugin {
 		// Initialize plugin components
 		$this->updater = new Updater;
 		$this->editor = new Editor;
+		$this->sanitizer = new Sanitizer;
 		$this->assets = new Assets;
 		$this->parser = new Class_Manager_Integration;
 

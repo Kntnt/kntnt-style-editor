@@ -109,7 +109,7 @@ final class Editor {
 
 		// Get and process the submitted CSS content
 		$css_content = $_POST['css_content'] ?? '';
-		$sanitized_css = $this->sanitize_css( stripslashes( $css_content ) );
+		$sanitized_css = Plugin::get_instance()->sanitizer->sanitize( stripslashes( $css_content ) );
 
 		// Save CSS to database (preserves original formatting)
 		Plugin::set_option( [ 'css' => $sanitized_css ] );
@@ -125,43 +125,6 @@ final class Editor {
 		else {
 			add_action( 'admin_notices', [ $this, 'render_error_notice' ] );
 		}
-
-	}
-
-	/**
-	 * Sanitizes a block of CSS code, typically for input from a trusted user.
-	 *
-	 * This function assumes the user has permission to add arbitrary CSS.
-	 * However, we want to prevent accidental cross-site scripting (XSS)
-	 * attacks by removing potentially malicious HTML tags rather than
-	 * strictly validating the CSS syntax.
-	 *
-	 * @param string $css The raw CSS string from user input.
-	 *
-	 * @return string The sanitized CSS string, safe for output.
-	 * @since 2.0.0
-	 */
-	private function sanitize_css( string $css ): string {
-
-		// Step 1: Remove leading and trailing whitespace.
-		// This is a general data hygiene practice to ensure clean data and prevent
-		// potential formatting issues when the CSS is rendered.
-		$css = trim( $css );
-
-		// Step 2: Strip null bytes ('\0').
-		// This is a standard security best practice. Null byte injection can be used
-		// to bypass security filters or cause unexpected behavior in how strings
-		// are handled by lower-level functions or the file system.
-		$css = str_replace( "\0", '', $css );
-
-		// Step 3: Use the core WordPress function to strip all HTML and PHP tags.
-		// This is the most critical part of the sanitization. Its purpose is to
-		// prevent XSS attacks. Even if we trust the user, they might accidentally
-		// paste a code snippet from an untrusted source that contains a malicious
-		// <script> tag. This function effectively neutralizes that primary threat.
-		$css = wp_strip_all_tags( $css );
-
-		return $css;
 
 	}
 
