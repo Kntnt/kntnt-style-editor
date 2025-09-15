@@ -1,7 +1,7 @@
 # Kntnt Style Editor
 
 [![License: GPL v2+](https://img.shields.io/badge/License-GPLv2+-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Requires PHP: 8.3+](https://img.shields.io/badge/PHP-8.2+-blue.svg)](https://php.net)
+[![Requires PHP: 8.3+](https://img.shields.io/badge/PHP-8.3+-blue.svg)](https://php.net)
 [![Requires WordPress: 6.8+](https://img.shields.io/badge/WordPress-6.8+-blue.svg)](https://wordpress.org)
 
 A WordPress plugin that provides a simple, high-performance way to add custom CSS globally across your site.
